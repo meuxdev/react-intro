@@ -9,9 +9,9 @@ import { TodoItem } from "./components/TodoItem";
 import { CreateTodoButton } from "./components/CreateTodoButton";
 
 const todos = [
-  { id: 1, text: "Cut some onions", completed: false },
-  { id: 2, text: "Clean my room", completed: false },
-  { id: 3, text: "Learn react", completed: false },
+  { key: 1, text: "Cut some onions", completed: true },
+  { key: 2, text: "Clean my room", completed: false },
+  { key: 3, text: "Learn react", completed: false },
 ];
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
       <TodoSearch />
       <TodoList>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} {...todo} />
+          <TodoItem {...todo} />
         ))}
       </TodoList>
       <CreateTodoButton />

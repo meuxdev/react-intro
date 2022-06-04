@@ -1,12 +1,17 @@
 import React from "react";
+import "./TodoItem.css";
 
-const TodoItem = ({ text, completed }) => {
+function TodoItem({ completed, text }) {
   return (
-    <li>
-      <h3>{text}</h3>
-      <span>{completed ? "Completed" : "Pending"}</span>
+    <li className="TodoItem">
+      <span className={`Icon Icon-check ${completed && "Icon-check--active"}`}>
+        ✓
+      </span>
+      <p className={`TodoItem-p ${completed && "TodoItem-p--complete"}`}>
+        {text}
+      </p>
+      <span className="Icon Icon-delete">X</span>
     </li>
   );
-};
-
+}
 export { TodoItem };
